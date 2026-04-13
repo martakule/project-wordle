@@ -11,7 +11,10 @@ function Banner({ status, guesses, answer }) {
         ) : (
           <>
             <strong>Congratulations!</strong> Got it in{" "}
-            <strong>{guesses} guesses</strong>.
+            <strong>
+              {guesses} guess{guesses === 1 ? "" : "es"}
+            </strong>
+            .
           </>
         )}
       </p>

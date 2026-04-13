@@ -3,12 +3,12 @@ import { range } from "../../utils";
 import { checkGuess } from "../../game-helpers";
 
 function Guess({ word, answer }) {
-  const cells = word ? checkGuess(word, answer) : range(5).map(() => "");
+  const result = checkGuess(word, answer);
   return (
     <p className="guess">
-      {cells.map((letter, index) => (
-        <span key={index} className={`cell ${letter.status || ""}`}>
-          {letter.letter || ""}
+      {range(5).map((num) => (
+        <span key={num} className={`cell ${result?.[num].status ?? ""}`}>
+          {result?.[num].letter ?? ""}
         </span>
       ))}
     </p>

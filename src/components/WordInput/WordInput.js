@@ -13,12 +13,14 @@ function WordInput({ addGuess }) {
     <form className="guess-input-wrapper" onSubmit={handleSubmit}>
       <label htmlFor="guess-input">Enter guess:</label>
       <input
+        required
         id="guess-input"
         type="text"
         value={word}
         onChange={(e) => setWord(e.target.value.toUpperCase())}
         pattern="[A-Z]{5}"
         maxLength={5}
+        title="Please enter exactly 5 letters."
       />
     </form>
   );
