@@ -5,7 +5,7 @@ function WordInput({ addGuess }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("guess:", word);
-    addGuess({ word, id: Math.random().toString() });
+    addGuess(word);
     setWord("");
   };
 
